@@ -1,5 +1,6 @@
 import { Product, calculaImpuestoSobreVenta } from './06-destructuring-assesments';
 
+
 const shoppingCart: Product[] = [
     {
         description: 'Telephone 1',
