@@ -1,0 +1,21 @@
+<p>Superheroines listing</p>
+
+
+<div *ngIf="deletedHero; else notDeleted">
+    <h3>Deleted Heroine: <small>{{ deletedHero }}</small></h3>
+</div>
+
+<ng-template #notDeleted>
+    <h3>Nothing was deleted</h3>
+</ng-template>
+
+<button (click)="deletingHero()">
+    Delete
+</button>
+
+<!-- directiva ngFor para recorrer todo un array completo (sin saber necesariamente su longitud) e imprimirlo entero, añadiendole un numero actuando como el de ordered list <ol></ol>  -->
+<ul>
+    <li *ngFor="let hero of heroes; let i = index">
+        {{ i + 1}} - {{ hero }}
+    </li>
+</ul>
