@@ -24,4 +24,8 @@ export class MainPageComponent {
     name: 'Kunfu Panda',
     power: 1000
   }
+
+  addNewCharacter(arg: Character) {
+    this.characters.push(arg);
+  }
 }

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Character } from '../interfaces/dbz.interface';
 
 @Component({
@@ -11,16 +11,15 @@ export class AddComponent {
     name: '',
     power: 0
   }
-
 /* para no añadir nada a menos que el campo requerido esté relleno */
 
+  @Output() onNewCharacter: EventEmitter<Character> = new EventEmitter();
 
   add(){
     if ( this.new.name.trim().length === 0 ) {
       return;//salte de este metodo=nohagas nada
     }
-
-    console.log(this.new)
+    this.onNewCharacter.emit( this.new );
 
     this.new = {
       name: '',
