@@ -1,0 +1,27 @@
+    <h3>Add <small>{{ new.name }}</small></h3>
+    <hr>
+
+
+    <!-- con ng  submit FormsModule en imports de app evitamos que nuestro servidor se refresque entero al presionar el botón de Add -->
+    <form (ngSubmit)="add()">
+        <!-- One-way data binding will bind the data from the component to the view (DOM) or from view to the component.  -->
+        <input 
+            type="text" 
+            placeholder="Name"
+            name="name"
+            [(ngModel)]="new.name"
+            
+        /><!-- los corchetes [] en el valor sirven para establecer alguna propiedad para el evento de tipo one-way-data-binding 
+        los parentesis () emitir o escuchar eventos
+            [value]="new.name"
+            (input)="changeName( $event )"-->
+        <input 
+        type="text" 
+        placeholder="Type of Power"
+        name="power"
+        [(ngModel)]="new.power"
+        /><!-- ngModel: two way data binding -->
+
+        <button >Add</button>
+    </form>
+
