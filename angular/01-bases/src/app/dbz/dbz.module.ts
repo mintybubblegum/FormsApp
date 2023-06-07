@@ -6,6 +6,8 @@ import { MainPageComponent } from './main-page/main-page.component';
 import { CharactersComponent } from './characters/characters.component';
 import { AddComponent } from './add/add.component';
 
+import { DbzService } from './services/dbz.service';
+
 
 
 @NgModule({
@@ -20,6 +22,9 @@ import { AddComponent } from './add/add.component';
   imports: [
     CommonModule,
     FormsModule
+  ],
+  providers: [ //todos los servicios que se van a especificar
+    DbzService
   ]
 })
 export class DbzModule { }
