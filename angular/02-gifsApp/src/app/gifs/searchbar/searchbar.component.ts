@@ -10,7 +10,7 @@ export class SearchbarComponent {
 //@ViewChild: para que cuando hagamos una búsqueda se elimine el contenido de el searchbar
   @ViewChild('txtSearch') txtSearch!:ElementRef<HTMLInputElement>; //! pnon-null assertion operator
 
-  constructor( private gifsService: GifsService ) {}//inyección de dependencias
+  constructor( private gifsService: GifsService ) {}//inyección del servicio global para poder visualizar toda su funcionalidad dentro de nuestro componente
   
   search(type: string){
     

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from "@angular/common/http"; //para hacer petición http y conectar con la API
 
 import { AppComponent } from './app.component';
 
@@ -12,6 +13,7 @@ import { GifsModule } from './gifs/gifs.module';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule, //para hacer petición http y conectar con la API
     SharedModule,
     GifsModule
   ],

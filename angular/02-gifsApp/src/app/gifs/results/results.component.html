@@ -1,1 +1,26 @@
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam quaerat odit ducimus excepturi necessitatibus voluptatem dolor aut quibusdam totam commodi sequi, natus tempora, nostrum deserunt! Explicabo asperiores rem illo necessitatibus.
+<!-- <ul>
+    <li *ngFor="let gif of results">
+        {{ gif.title }}
+    </li>
+</ul> -->
+
+<div class="row">
+    <div *ngFor="let gif of results"
+        class="col-md-4 col-sm-6">
+
+        <div class="card">
+            <!-- forma de añadir las rutas de nuestros gifs de manera general con puntas redondeadas -->
+            <img 
+                [src]="gif.images.downsized_medium.url" 
+                [alt]="gif.title"
+                class="card-img-top"
+            >
+            <div class="card-body">
+                <p class="card-text">
+                    {{ gif.title }}
+                </p>
+            </div>
+        </div>
+
+    </div>
+</div>
