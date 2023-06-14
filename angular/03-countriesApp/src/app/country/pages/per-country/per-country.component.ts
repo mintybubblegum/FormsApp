@@ -7,15 +7,15 @@ import { Country } from '../../interfaces/country.interface';
   templateUrl: './per-country.component.html',
 })
 export class PerCountryComponent {
-  term      : string = '';
-  hayError  : boolean = false;
+  term      : string    = '';
+  hayError  : boolean   = false;
   countries : Country[] = [];
 
   constructor( private countryService: CountryService) {}
 
-  search() {
+  search( term: string ) {
     this.hayError = false;
-    console.log(this.term); //posteo/impresion del formulario
+    this.term     = term;
 
     this.countryService.searchCountry( this.term )
       .subscribe((countries) => {
@@ -28,4 +28,8 @@ export class PerCountryComponent {
       });
   }
 
+  suggestions( term: string ) {
+    this.hayError = false;
+    //TODO crear suggestions
+  }
 }
