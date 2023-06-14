@@ -6,7 +6,8 @@
 <ng-template #loading>
     <div class="row">
         <div class="col-12">
-            <h2>Country: <strong>{{ country.name }}</strong></h2>
+            <h2>Country: <strong>{{ country[0].name.common }}</strong></h2>
+            
             <hr>
         </div>  
     </div>
@@ -14,18 +15,17 @@
     <div class="row">
         <div class="col-4">
             <h3>Flag</h3>
-            <img [src]="country.flags" class="img-thumbnail">
+            <img [src]="country[0].flags.png" class="img-thumbnail">
         </div>
-
         <div class="col">
             <h3>Information</h3>
             <ul class="list-group">
                 <li class="list-group-item">
-                    <strong>Population</strong> {{ country.population | number }}
+                    <strong>Population</strong> {{ country[0].population | number }}
                 </li>
                 
                 <li class="list-group-item">
-                    <strong>Código:</strong> {{country.cca3}} 
+                    <strong>Código:</strong> {{country[0].cca2}} 
                 </li>
             </ul>
         </div>
@@ -35,22 +35,22 @@
     <div class="row">   
         <div class="col">
 
-            <!-- <span class="badge bg-primary m-1">{{country.translations['ara'].common}}</span>
-            <span class="badge bg-primary m-1">{{country.translations['bre'].common}}</span>
-            <span class="badge bg-primary m-1">{{country.translations['ces'].common}}</span>
-            <span class="badge bg-primary m-1">{{country.translations['cym'].common}}</span>
-            <span class="badge bg-primary m-1">{{country.translations['deu'].common}}</span>
-            <span class="badge bg-primary m-1">{{country.translations['est'].common}}</span>
-            <span class="badge bg-primary m-1">{{country.translations['fin'].common}}</span>
-            <span class="badge bg-primary m-1">{{country.translations['ita'].common}}</span>
-            <span class="badge bg-primary m-1">{{country.translations['kor'].common}}</span>
-            <span class="badge bg-primary m-1">{{country.translations['per'].common}}</span> -->
+            <span class="badge bg-primary m-1">{{country[0].translations['ara'].common}}</span>
+            <span class="badge bg-primary m-1">{{country[0].translations['bre'].common}}</span>
+            <span class="badge bg-primary m-1">{{country[0].translations['ces'].common}}</span>
+            <span class="badge bg-primary m-1">{{country[0].translations['cym'].common}}</span>
+            <span class="badge bg-primary m-1">{{country[0].translations['deu'].common}}</span>
+            <span class="badge bg-primary m-1">{{country[0].translations['est'].common}}</span>
+            <span class="badge bg-primary m-1">{{country[0].translations['fin'].common}}</span>
+            <span class="badge bg-primary m-1">{{country[0].translations['ita'].common}}</span>
+            <span class="badge bg-primary m-1">{{country[0].translations['kor'].common}}</span>
+            <span class="badge bg-primary m-1">{{country[0].translations['per'].common}}</span>
 
         </div>
     </div> 
 
-    <pre class="mt-5">
+    <!-- <pre class="mt-5">
         {{ country | json }}
-    </pre>
+    </pre> -->
 
 </ng-template>

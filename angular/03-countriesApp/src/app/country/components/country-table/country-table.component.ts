@@ -7,6 +7,11 @@ import { Country } from '../../interfaces/country.interface';
 })
 export class CountryTableComponent {
 
-  @Input() countries: Country[] = [];  
+  @Input() countries: Country[] = [];
+
+  event(str:any){
+    console.log(str.name.common);
+    
+  }
 
 }

@@ -13,7 +13,7 @@ import { Country } from '../../interfaces/country.interface';
 })
 export class ShowCountryComponent implements OnInit{
 
-  country!: Country;
+  country!: Country[];
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -31,6 +31,7 @@ export class ShowCountryComponent implements OnInit{
       )
       .subscribe( country => this.country = country );
 
+      
     /* this.activatedRoute.params
       .subscribe( ({ id }) => {
         console.log( id );
@@ -41,4 +42,9 @@ export class ShowCountryComponent implements OnInit{
           });
       }); */
   }
+  event(){
+      console.log(this.country[0].name.common);
+      
+  }
+
 }
