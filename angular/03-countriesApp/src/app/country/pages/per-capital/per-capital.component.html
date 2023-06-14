@@ -1,1 +1,23 @@
-<p>per-capital works!</p>
+<h2>Per Capital</h2>
+<hr>
+
+<div class="row">
+    <div class="col">
+        <app-country-input 
+            (onEnter)="search( $event )"
+        />
+    </div>
+</div>
+
+<hr>
+<!-- to show error message only when there's an error, not show it when is true -->
+<div *ngIf="hayError"
+    class="alert alert-danger">
+    No term was found with {{ term }} name
+</div>
+<!-- para que no se muestre la tabla de paises sino se ha hecho busqueda o no hay ningún resultado -->
+<div *ngIf="countries.length > 0" class="row">
+    <div class="col">
+        <app-country-table [countries] = 'countries'/>
+    </div>
+</div>

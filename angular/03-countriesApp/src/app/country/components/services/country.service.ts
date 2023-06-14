@@ -15,10 +15,13 @@ export class CountryService {
   constructor( private http: HttpClient ) { }
 //<any>este tipo de simbolos no crea una instancia, sólo le dice a ts de qué tipo es el documento
   searchCountry( term: string ): Observable<Country[]>{
-
     //<Country[]> aqui podemos encontrar el tipado que se corresponde con el array de objetos de nuestra BBDD y sustituye al <any> anterior
     const url = `${ this.apiUrl }/name/${ term }`;
     return this.http.get<Country[]>( url )
   }
 
+  searchCapital( term: string ): Observable<Country[]>{
+    const url = `${ this.apiUrl }/capital/${ term }`;
+    return this.http.get<Country[]>( url )
+  }
 }

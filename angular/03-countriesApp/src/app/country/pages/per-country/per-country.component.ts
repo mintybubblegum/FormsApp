@@ -17,7 +17,7 @@ export class PerCountryComponent {
     this.hayError = false;
     this.term     = term;
 
-    this.countryService.searchCountry( this.term )
+    this.countryService.searchCountry( term )
       .subscribe((countries) => {
         console.log(countries);//para conectar observable + searchbar + api data
         this.countries= countries;
