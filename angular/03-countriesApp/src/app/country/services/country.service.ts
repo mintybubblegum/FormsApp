@@ -5,6 +5,8 @@ import { Country } from '../interfaces/country.interface';
 
 //los services son singleton que están habilitados globalmente en la app, por lo que no hay que importarlos en ningun sitio
 
+//el service es donde se almacenan los métodos
+
 @Injectable({
   providedIn: 'root'
 })
@@ -24,6 +26,12 @@ export class CountryService {
 
     const url = `${ this.apiUrl }/capital/${ term }`;
     return this.http.get<Country[]>( url )
+  }
+
+  getAlphaCountry( id: string ): Observable<Country>{
+
+    const url = `${ this.apiUrl }/alpha/${ id }`;
+    return this.http.get<Country>( url )
   }
 
 }
