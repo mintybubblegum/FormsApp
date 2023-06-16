@@ -5,25 +5,24 @@ import { RouterModule } from '@angular/router';
 
 import { PerCapitalComponent } from './pages/per-capital/per-capital.component';
 import { PerCountryComponent } from './pages/per-country/per-country.component';
-import { PerRegionComponent } from './pages/per-region/per-region.component';
+import { PerContinentComponent } from './pages/per-continent/per-continent.component';
 import { ShowCountryComponent } from './pages/show-country/show-country.component';
 import { CountryTableComponent } from './components/country-table/country-table.component';
 import { CountryInputComponent } from './components/country-input/country-input.component';
-
 
 @NgModule({
   declarations: [
     PerCapitalComponent,
     PerCountryComponent,
-    PerRegionComponent,
+    PerContinentComponent,
     ShowCountryComponent,
     CountryTableComponent,
-    CountryInputComponent
+    CountryInputComponent,
   ],
   exports: [
     PerCapitalComponent,
     PerCountryComponent,
-    PerRegionComponent,
+    PerContinentComponent,
     ShowCountryComponent
   ],
   imports: [

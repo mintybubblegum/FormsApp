@@ -1,0 +1,11 @@
+li{
+    cursor: pointer;
+}
+
+.sidebar-buttons:hover{
+background-color: rgb(53, 88, 182);
+color: white;
+
+animation: pulse;
+animation-duration: 2s;
+}

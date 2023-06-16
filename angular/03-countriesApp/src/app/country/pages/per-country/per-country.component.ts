@@ -5,11 +5,21 @@ import { Country } from '../../interfaces/country.interface';
 @Component({
   selector: 'app-per-country', 
   templateUrl: './per-country.component.html',
+  styles: [
+    `
+    li {
+      cursor: pointer;
+    }
+    `
+  ]
 })
 export class PerCountryComponent {
   term      : string    = '';
   hayError  : boolean   = false;
   countries : Country[] = [];
+
+  suggestedCountries: Country[] = [];
+  showSuggestions   : boolean = false;
 
   constructor( private countryService: CountryService) {}
 
@@ -30,6 +40,17 @@ export class PerCountryComponent {
 
   suggestions( term: string ) {
     this.hayError = false;
-    //TODO crear suggestions
+    this.term     = term;
+    this.showSuggestions =  true;
+    
+    this.countryService.searchCountry(term)
+      .subscribe(
+        countries => this.suggestedCountries = countries.splice(0,5),
+        (err) => this. suggestedCountries = [] 
+      );
+  }
+
+  searchSuggested( term: string ){
+    this.search( term );
   }
 }

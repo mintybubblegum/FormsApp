@@ -11,7 +11,5 @@ export class CountryTableComponent {
 
   event(str:any){
     console.log(str.name.common);
-    
   }
-
 }

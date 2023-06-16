@@ -1,0 +1,30 @@
+<h3>Search continent <small>{{ activatedContinent | titlecase }}</small></h3>
+<hr>
+
+<h5>Select continent</h5>
+
+<div class="row">
+    <div class="col">
+
+        <!-- [class.btn-primary]="continent === activatedContinent" -->
+        <!-- [ngClass]="{
+                    'btn-primary': activatedContinent === continent,
+                    'btn-outline-primary': activatedContinent !== continent
+                }" -->
+
+        <button *ngFor="let continent of continents"
+                [class]="getCSSClass( continent )"
+                (click)="initializeContinent( continent )
+                "
+                id="continent-btn">
+            {{ continent | titlecase }}
+        </button>
+
+        <div *ngIf="countries.length > 0" class="row">
+    <div class="col">
+        <app-country-table [countries] = 'countries'/>
+        
+    </div>
+</div>
+    </div>
+</div>

@@ -4,7 +4,7 @@ import { switchMap, tap } from 'rxjs/operators';
 //switchMap: permite recibir observable y regresar otro observable 
 //tap: operador que dispara efecto secundario
 
-import { CountryService } from '../../services/country.service';
+import { CountryService } from '../../components/services/country.service';
 import { Country } from '../../interfaces/country.interface';
 
 @Component({
