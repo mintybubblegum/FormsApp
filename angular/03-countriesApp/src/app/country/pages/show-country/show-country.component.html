@@ -1,9 +1,9 @@
-<div *ngIf="!country; else loading" 
+<div *ngIf="!country; else isLoading" 
     class="alert alert-info">
     Please wait...
 </div>
 
-<ng-template #loading>
+<ng-template #isLoading>
     <div class="row">
         <div class="col-12">
             <h2>Country: <strong>{{ country[0].name.common }}</strong></h2>

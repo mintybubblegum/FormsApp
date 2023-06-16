@@ -3,8 +3,9 @@
         <tr>
             <th>#</th>
             <th>Flag</th>
-            <th>Name</th>
-            <th>City</th>
+            <th>Country</th>
+            <th>Capital</th>
+            <th>Population</th>
             <th></th>
         </tr>
     </thead>
@@ -14,7 +15,8 @@
             <td>
                 <img class="small-flag" [src]="country.flags.png">
             </td>
-            <td>{{ country.capital }}, {{ country.name.common }}</td>
+            <td>{{ country.name.common }}</td>
+            <td>{{ country.capital }}</td>
             <td>{{ country.population | number }}</td>
             <td>
                 <!-- [routerLink]="[]" muestra el endpoint del nombre del pais al igual que su alpha2code -->
