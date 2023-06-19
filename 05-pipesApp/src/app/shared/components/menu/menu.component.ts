@@ -18,15 +18,18 @@ export class MenuComponent {
               items: [
                 { 
                   label: 'Dates and text', 
-                  icon: 'pi pi-align-left'
+                  icon: 'pi pi-align-left',
+                  routerLink: '/'
                 },
                 { 
                   label: 'Numbers', 
-                  icon: 'pi pi-dollar'
+                  icon: 'pi pi-dollar',
+                  routerLink:'numbers'
                 },
                 { 
                   label: 'Not common', 
-                  icon: 'pi pi-globe'
+                  icon: 'pi pi-globe',
+                  routerLink:'uncommon'
                 }
               ]
             },
