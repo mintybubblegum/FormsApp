@@ -1,1 +1,28 @@
-<p>basic-page works!</p>
+<p-panel [showHeader]="false"><!-- para quitar espacio entre menubar y primer bloque de contenido -->
+    <h1>Basic Pipes</h1>
+    <p>
+        Pipes included in Angular - usually found in Common Module
+    </p>
+</p-panel>
+
+<div class="p-grid">
+
+    <div class="p-col-4">
+        <p-card header="uppercase">
+            {{ nameLower | uppercase }}
+        </p-card>
+    </div>
+
+    <div class="p-col-4">
+        <p-card header="lowercase">
+            {{ nameUpper | lowercase }}
+        </p-card>
+    </div>
+
+    <div class="p-col-4">
+        <p-card header="titlecase">
+            {{ fullName | titlecase }}
+        </p-card>
+    </div>
+
+</div>
