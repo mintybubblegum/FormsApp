@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { MenuItem } from 'primeng/api';
 
 @Component({
@@ -34,12 +35,13 @@ export class MenuComponent {
               ]
             },
             { 
-              label: 'Custom Pipes', 
+              label: 'Custom Pipes Section', 
               icon: 'pi pi-cog',
               items: [
                 { 
                   label: 'Custom Pipes', 
-                  icon: 'pi pi-cog'
+                  icon: 'pi pi-cog',
+                  routerLink: 'custom'
                 }
               ]
             }
