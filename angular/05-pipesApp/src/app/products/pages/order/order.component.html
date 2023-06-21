@@ -16,24 +16,27 @@
     <div class="p-toolbar-group-end">
 
         <p-button 
-            class="mr-2" 
+            class="mr-2"
+            (onClick)="changeOrder('name')"
             label="Per name" 
             icon="pi pi-sort" 
             styleClass="p-button-success">
         </p-button>
 
         <p-button 
-            class="mr-2" 
+            class="mr-2"
+            (onClick)="changeOrder('canFly')"
             label="Per flying" 
             icon="pi pi-sort" 
             styleClass="p-button-danger">
         </p-button>
 
         <p-button 
-            class="mr-2" 
+            class="mr-2"
+            (onClick)="changeOrder('color')"
             label="Per color" 
             icon="pi pi-sort" 
-            styleClass="p-button-danger">
+            styleClass="p-button-help">
         </p-button>
     </div>
 </p-toolbar>
@@ -41,7 +44,7 @@
 <div class="grid">
     <div class="col mt-2">
         <p-panel header="Heroes">
-            <p-table [value]="heroes" [tableStyle]="{'min-width': '50 rem'}">
+            <p-table [value]="heroes | sortBy:orderBy" [tableStyle]="{'min-width': '50 rem'}">
                 <ng-template pTemplate="header">
                     <tr>
                         <th>Name</th>
@@ -52,7 +55,7 @@
                 <ng-template pTemplate="body" let-hero>
                     <tr>
                         <td>{{ hero.name }}</td>
-                        <td>{{ hero.canFly }}</td>
+                        <td>{{ hero.canFly | canFly | titlecase }}</td>
                         <td>{{ hero.color }}</td>
                     </tr>
                 </ng-template>
