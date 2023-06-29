@@ -12,7 +12,7 @@ const routes: Routes = [
       { path: 'dynamic', component: DynamicPageComponent },
       { path: 'switches', component: SwitchesPageComponent },
       { path: '**', redirectTo: 'basic' },
-    ]
+    ]  
   }
 ];
 
