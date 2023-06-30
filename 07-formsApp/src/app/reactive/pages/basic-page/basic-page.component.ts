@@ -29,12 +29,15 @@ export class BasicPageComponent implements OnInit {
   constructor( private fb: FormBuilder ){}
 
   ngOnInit(): void {
-    this.myForm.reset( product );
+    /* this.myForm.reset( product ); */
   }
 
   onSave():void {
 
-    if ( this.myForm.invalid ) return;
+    if ( this.myForm.invalid ) {
+      this.myForm.markAllAsTouched(); //esto sirve para que se activen todos los mensajes de error en nuestro formulario cuando presionamos el botón 'guardar'
+      return;
+    }
 
     console.log(this.myForm.value);
 
