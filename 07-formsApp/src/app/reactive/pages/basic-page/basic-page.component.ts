@@ -32,6 +32,30 @@ export class BasicPageComponent implements OnInit {
     /* this.myForm.reset( product ); */
   }
 
+  isNotValidField(field: string): boolean | null {
+    return this.myForm.controls[field].errors
+    && this.myForm.controls[field].touched;
+  }
+
+  getFieldError(field: string): string | null {
+
+    if ( !this.myForm.controls[field] ) return null;
+
+    const errores = this.myForm.controls[field].errors || {};
+
+    for (const key of Object.keys(errores)) {
+      switch( key ) {
+        case 'required':
+          return 'Field required';
+
+          case 'minlength':
+            return `This field need a minimum of ${ errores['minlength'].requiredLength } characters.`;
+      }
+    }
+
+    return null;
+  }
+
   onSave():void {
 
     if ( this.myForm.invalid ) {
