@@ -8,7 +8,7 @@
 
             <!-- Nombre -->
             <div class="row mb-3">
-                <label class="col-sm-3 col-form-label">Nombre</label>
+                <label class="col-sm-3 col-form-label">Nombre completo</label>
                 <div class="col-sm-9">
                     <input type="text"
                         class="form-control"
@@ -101,10 +101,10 @@
 <pre>{{ registerForm.errors | json }}</pre>
 
 <h5>Nombre</h5>
-<pre>{{ registerForm.value.name | json }}</pre>
+<pre>{{ registerForm.controls['name'].errors | json }}</pre>
 
 <h5>Email</h5>
-<pre>{{ registerForm.value.email | json }}</pre>
+<pre>{{ registerForm.controls['email'].errors | json }}</pre>
 
 <!-- validaciones síncronas -->
 <h5>Username</h5>
