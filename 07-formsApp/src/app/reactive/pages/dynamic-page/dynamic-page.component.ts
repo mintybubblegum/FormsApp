@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   templateUrl: './dynamic-page.component.html',
@@ -14,6 +14,8 @@ export class DynamicPageComponent {
       ['Tekken 3', Validators.required],
     ])
   })
+
+  public newFavourite: FormControl = new FormControl('', Validators.required);
 
   constructor( private fb:FormBuilder ){}
 
@@ -50,6 +52,24 @@ export class DynamicPageComponent {
     return null;
   }
 
+  onAddToFavourites():void {
+
+    if ( this.newFavourite.invalid ) return;
+    const newGame = this.newFavourite.value;
+
+    //this.favouriteGamesControls.push( new FormControl( newGame, Validators.required ) );
+    this.favouriteGamesControls.push(
+      this.fb.control( newGame, Validators.required )
+    );
+
+    this.newFavourite.reset();
+
+  }
+
+  onDeleteFavourite( index: number ):void {
+    this.favouriteGamesControls.removeAt(index);
+  }
+
   onSubmit():void{
 
     if ( this.myDynamicForm.invalid ) {
@@ -58,6 +78,8 @@ export class DynamicPageComponent {
     }
 
     console.log(this.myDynamicForm.value);
+    //para eliminar campos de favoritos cuando ya se ha pulsado botón guardar
+    (this.myDynamicForm.controls['favouriteGames'] as FormArray ) = this.fb.array([]);
     this.myDynamicForm.reset();
   }
 
