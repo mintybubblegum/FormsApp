@@ -16,7 +16,7 @@
                         placeholder="Nombre del usuario">
 
                     <span *ngIf="isNotValidField('name')" class="form-text text-danger">
-                        Debe de ser en formato de nombre y apellido
+                        Debe contener nombre y apellido
                     </span>
                 </div>
             </div>
@@ -30,7 +30,7 @@
                         formControlName="email"
                         placeholder="Email del usuario">
                     <span *ngIf="isNotValidField('email')" class="form-text text-danger">
-                        mensaje de error del email
+                        Ya existe una cuenta asociada con este email
                     </span>
                 </div>
             </div>
