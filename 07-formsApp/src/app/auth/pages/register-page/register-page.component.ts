@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import * as customValidators from 'src/app/shared/validations/validations';
+import { ValidationsService } from 'src/app/shared/service/validations.service';
 
 
 @Component({
@@ -9,18 +9,22 @@ import * as customValidators from 'src/app/shared/validations/validations';
 export class RegisterPageComponent {
 
   public registerForm: FormGroup = this.fb.group({
-    name: ['', [ Validators.required, Validators.pattern(customValidators.firstNameAndLastnamePattern) ]],
-    email: ['', [ Validators.required, Validators.pattern(customValidators.emailPattern) ]],
-    username: ['', [ Validators.required, customValidators.cantBeStrider ]],
+    name: ['', [ Validators.required, Validators.pattern(this.validationsService.firstNameAndLastnamePattern) ]],
+    email: ['', [ Validators.required, Validators.pattern(this.validationsService.emailPattern) ]],
+    username: ['', [ Validators.required, this.validationsService.cantBeStrider ]],
     password: ['', [ Validators.required, Validators.minLength(6) ]],
     password2: ['', [ Validators.required ]],
   })
 
 
-  constructor( private fb: FormBuilder ) {}
+  constructor( 
+    private fb: FormBuilder,
+    private validationsService: ValidationsService
+    ) {}
 
+  //para que se desaparezcan los validationErrors y sólo aparezcan cuando se pulse 'crear'. Se añade en cada span de register-page.component.html
   isNotValidField( field: string ) {
-    // TODO: obtener validación desde un servicio
+    return this.validationsService.isNotValidField( this.registerForm, field );
   }
 
   onSubmit() {
