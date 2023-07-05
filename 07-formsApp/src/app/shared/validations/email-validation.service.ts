@@ -26,7 +26,9 @@ export class EmailValidation implements AsyncValidator {
         )
 
         return httpCallObservable;
+
     }
+
 
     //
 
@@ -44,3 +46,15 @@ export class EmailValidation implements AsyncValidator {
     } */
     
 }
+
+//* - así es como trabajaríamos las validaciones de email en la vida real
+
+// return this.http.get<any[]>(`http://localhost:3000/users?q=${ email }`)
+// .pipe(
+//   // delay(3000),
+//   map( resp => {
+//     return ( resp.length === 0 )
+//         ? null
+//         : { emailTaken: true }
+//   })
+// );
